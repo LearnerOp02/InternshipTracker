@@ -1,179 +1,248 @@
-# 🎓 Student Internship Tracking System
+# Student Internship Tracking System
 
-A full-stack **MERN-based Student Internship Tracking System** designed to manage the complete internship lifecycle between **Students, Companies, and the Placement Cell**.
+A full-stack **MERN application** for managing and monitoring the complete student internship lifecycle across **Students, Companies, and the Placement Cell**.
 
-The system allows students to discover and apply for internships, companies to publish opportunities and manage applicants, and the placement cell to approve, monitor, and manage the overall internship process.
-
----
-
-## 🚀 Features
-
-### 👨‍🎓 Student Module
-
-- Student registration and login
-- Student profile management
-- Academic information management
-- Skills, projects, and certifications
-- Resume management
-- Browse published internships
-- Apply for internships
-- Eligibility checking
-- Track application status
-- View scheduled interviews
-- View assigned tasks
-- Update task progress
-- Submit weekly internship reports
-- Track internship progress
-- Upload internship-related documents
-- View evaluations
-- Receive notifications
-- Student dashboard
-
-### 🏢 Company Module
-
-- Company registration and login
-- Company profile management
-- Placement Cell verification
-- Create internship opportunities
-- Submit internships for approval
-- Publish approved internships
-- View internship applicants
-- Review applications
-- Shortlist or reject students
-- Schedule interviews
-- Select students
-- Assign internship tasks
-- Monitor student progress
-- Review weekly reports
-- Evaluate interns
-- Receive notifications
-- Company dashboard
-
-### 🧑‍💼 Placement Cell Module
-
-- Secure Placement Cell login
-- Placement dashboard
-- View registered students
-- Manage registered companies
-- Approve or reject companies
-- Review internship opportunities
-- Approve or reject internships
-- Publish approved internships
-- Monitor student applications
-- Monitor active internships
-- Verify student documents
-- View internship progress
-- Reports and analytics
-- Audit logs
-- Notifications
+The platform centralizes internship discovery, applications, company and internship approvals, interviews, task management, weekly reporting, document verification, evaluations, notifications, and placement monitoring within a role-based system.
 
 ---
 
-## 🔄 System Workflow
+## Overview
+
+Managing internships manually can involve scattered records, repeated communication, and limited visibility into student progress.
+
+The **Student Internship Tracking System** provides a centralized platform where:
+
+* **Students** discover internships, apply, track applications, and manage internship activities.
+* **Companies** publish internship opportunities, review applicants, conduct the selection process, and manage interns.
+* **Placement Cell** verifies companies and internships while monitoring the overall internship lifecycle.
+
+---
+
+## Core Workflow
 
 ```text
 Company Registration
-        ↓
-Placement Cell Approval
-        ↓
+        │
+        ▼
+Placement Cell Verification
+        │
+        ▼
 Company Creates Internship
-        ↓
-Placement Cell Reviews Internship
-        ↓
+        │
+        ▼
+Placement Cell Reviews & Approves
+        │
+        ▼
 Internship Published
-        ↓
-Student Browses Internship
-        ↓
+        │
+        ▼
 Student Applies
-        ↓
+        │
+        ▼
 Company Reviews Application
-        ↓
-Shortlisting / Interview
-        ↓
-Student Selected
-        ↓
-Company Assigns Tasks
-        ↓
-Student Submits Weekly Reports
-        ↓
-Internship Progress Tracking
-        ↓
+        │
+        ▼
+Shortlisting & Interview
+        │
+        ▼
+Student Selection
+        │
+        ▼
+Internship Begins
+        │
+        ├── Task Management
+        ├── Weekly Reports
+        ├── Document Management
+        └── Progress Tracking
+        │
+        ▼
 Company Evaluation
-        ↓
+        │
+        ▼
 Internship Completion
 ```
 
-The **Placement Cell monitors and manages the overall process** throughout the internship lifecycle.
+The **Placement Cell** can monitor and manage the process throughout the internship lifecycle.
 
 ---
 
-## 🛠️ Technology Stack
+## User Roles
 
-### Frontend
+### Student
 
-- React.js
-- Vite
-- Tailwind CSS
-- React Router
-- Axios
+Students can:
 
-### Backend
+* Register and securely log in
+* Create and update their profile
+* Maintain academic information
+* Add skills, projects, and certifications
+* Manage resume information
+* Browse published internships
+* Check internship eligibility
+* Apply for internships
+* Track application status
+* View interview information
+* View assigned tasks
+* Update task progress
+* Submit weekly reports
+* Upload internship documents
+* Track internship progress
+* View evaluations
+* Receive notifications
 
-- Node.js
-- Express.js
-- REST API
-- JWT Authentication
-- Role-Based Access Control
+### Company
 
-### Database
+Companies can:
 
-- MongoDB
-- MongoDB Atlas
-- Mongoose
+* Register and securely log in
+* Create and manage a company profile
+* Submit the company for Placement Cell verification
+* Create internship opportunities
+* Submit internships for approval
+* Manage internship listings
+* View applicants
+* Review applications
+* Shortlist or reject applicants
+* Schedule interviews
+* Select students
+* Assign internship tasks
+* Monitor student progress
+* Review internship activities
+* Evaluate students
+* Receive notifications
 
-### Development Tools
+### Placement Cell
 
-- Git
-- GitHub
-- npm
-- Nodemon
-- VS Code
+The Placement Cell can:
+
+* Access a dedicated administrative dashboard
+* View registered students
+* Review registered companies
+* Approve or reject companies
+* Review internship opportunities
+* Approve or reject internships
+* Publish approved internships
+* Monitor applications
+* Verify internship-related documents
+* Monitor ongoing internships
+* View reports and analytics
+* Review audit logs
+* Receive system notifications
 
 ---
 
-## 👥 User Roles
+## Application Lifecycle
 
-The system contains three main roles:
-
-| Role | Purpose |
-|---|---|
-| **Student** | Search and apply for internships and manage internship activities |
-| **Company** | Publish internships and manage applicants/interns |
-| **Placement Cell** | Approve, monitor, and manage the internship ecosystem |
-
----
-
-## 🔐 Authentication & Authorization
-
-The application uses **JWT (JSON Web Token)** authentication.
-
-After login, users are redirected according to their role:
+### Internship Lifecycle
 
 ```text
-Login
-  │
-  ├── Student ────────→ Student Dashboard
-  │
-  ├── Company ────────→ Company Dashboard
-  │
-  └── Placement Cell ─→ Placement Dashboard
+Draft
+  ↓
+Pending Approval
+  ↓
+Approved
+  ↓
+Published
+  ↓
+Application Closed
+  ↓
+Ongoing
+  ↓
+Completed
+  ↓
+Archived
 ```
 
-Protected backend APIs use authentication and role-based authorization middleware.
+### Application Lifecycle
+
+```text
+Applied
+   ↓
+Under Review
+   ↓
+Shortlisted
+   ↓
+Interview Scheduled
+   ↓
+Selected
+```
+
+An application can also be **rejected** during the review and selection process.
 
 ---
 
-## 📂 Project Structure
+## Technology Stack
+
+| Layer             | Technologies                 |
+| ----------------- | ---------------------------- |
+| Frontend          | React.js, Vite, Tailwind CSS |
+| Routing           | React Router                 |
+| API Communication | Axios                        |
+| Backend           | Node.js, Express.js          |
+| Database          | MongoDB Atlas                |
+| ODM               | Mongoose                     |
+| Authentication    | JWT                          |
+| Password Security | bcrypt                       |
+| Authorization     | Role-Based Access Control    |
+| Validation        | Express Validator            |
+| File Handling     | Multer                       |
+| Development       | Git, GitHub, npm, Nodemon    |
+
+---
+
+## Architecture
+
+```text
+┌─────────────────────────────────────────────┐
+│               React + Vite                  │
+│                                             │
+│  Student     Company      Placement Cell    │
+└─────────────────────┬───────────────────────┘
+                      │
+                      │ REST API / JWT
+                      ▼
+┌─────────────────────────────────────────────┐
+│             Node.js + Express               │
+│                                             │
+│ Authentication • Authorization • APIs       │
+│ Validation • Business Logic • File Handling │
+└─────────────────────┬───────────────────────┘
+                      │
+                      │ Mongoose
+                      ▼
+┌─────────────────────────────────────────────┐
+│                MongoDB Atlas                │
+│                                             │
+│ Users • Students • Companies • Internships  │
+│ Applications • Tasks • Reports • Documents  │
+│ Evaluations • Notifications • Audit Logs    │
+└─────────────────────────────────────────────┘
+```
+
+---
+
+## Database Collections
+
+The system uses collections including:
+
+```text
+users
+students
+companies
+internships
+applications
+documents
+tasks
+weeklyReports
+internshipProgress
+evaluations
+notifications
+auditLogs
+```
+
+---
+
+## Project Structure
 
 ```text
 InternshipTracker/
@@ -196,7 +265,12 @@ InternshipTracker/
 │   ├── public/
 │   ├── src/
 │   │   ├── components/
+│   │   ├── layouts/
 │   │   ├── pages/
+│   │   │   ├── student/
+│   │   │   ├── company/
+│   │   │   └── placement/
+│   │   ├── routes/
 │   │   ├── services/
 │   │   └── ...
 │   ├── .gitignore
@@ -208,15 +282,26 @@ InternshipTracker/
 
 ---
 
-## ⚙️ Installation
+## Getting Started
 
-### 1. Clone the repository
+### Prerequisites
+
+Make sure the following are installed/configured:
+
+* Node.js
+* npm
+* Git
+* MongoDB Atlas account
+
+---
+
+## Installation
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/LearnerOp02/InternshipTracker.git
 ```
-
-Enter the project:
 
 ```bash
 cd InternshipTracker
@@ -224,7 +309,7 @@ cd InternshipTracker
 
 ---
 
-## 🔧 Backend Setup
+### 2. Backend Setup
 
 Navigate to the backend:
 
@@ -238,23 +323,23 @@ Install dependencies:
 npm install
 ```
 
-Create a `.env` file:
+Create a `.env` file inside `backend/`:
 
 ```env
 PORT=8000
-MONGO_URI=your_mongodb_atlas_connection_string
-JWT_SECRET=your_jwt_secret
+MONGO_URI=YOUR_MONGODB_ATLAS_CONNECTION_STRING
+JWT_SECRET=YOUR_JWT_SECRET
 FRONTEND_URL=http://localhost:5173
 NODE_ENV=development
 ```
 
-Start the backend:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-The backend will run at:
+The backend will normally run on:
 
 ```text
 http://localhost:8000
@@ -262,9 +347,9 @@ http://localhost:8000
 
 ---
 
-## 🎨 Frontend Setup
+### 3. Frontend Setup
 
-Open another terminal and navigate to:
+Open another terminal:
 
 ```bash
 cd frontend
@@ -276,7 +361,7 @@ Install dependencies:
 npm install
 ```
 
-Create a `.env` file if required:
+Create a `.env` file inside `frontend/`:
 
 ```env
 VITE_API_URL=http://localhost:8000/api
@@ -288,7 +373,7 @@ Start the frontend:
 npm run dev
 ```
 
-The frontend will normally run at:
+The application will normally be available at:
 
 ```text
 http://localhost:5173
@@ -296,9 +381,9 @@ http://localhost:5173
 
 ---
 
-## 🌐 API Structure
+## API Modules
 
-Major API groups include:
+The backend is organized into REST API modules such as:
 
 ```text
 /api/auth
@@ -320,157 +405,215 @@ Major API groups include:
 
 ---
 
-## 📊 Internship Application Lifecycle
+## Authentication & Authorization
 
-An application can move through stages such as:
+The application uses **JWT-based authentication**.
 
-```text
-Applied
-   ↓
-Under Review
-   ↓
-Shortlisted
-   ↓
-Interview Scheduled
-   ↓
-Selected
-```
-
-An application may also be:
+After successful authentication, users access functionality according to their assigned role:
 
 ```text
-Rejected
+                  Login
+                    │
+        ┌───────────┼───────────┐
+        │           │           │
+        ▼           ▼           ▼
+     Student      Company   Placement Cell
+        │           │           │
+        ▼           ▼           ▼
+     Student      Company     Placement
+    Dashboard    Dashboard    Dashboard
 ```
+
+Protected API endpoints use authentication and role-based authorization middleware to restrict access.
+
+Public registration is intended for:
+
+* Student
+* Company
+
+Placement Cell accounts are not intended for unrestricted public registration.
 
 ---
 
-## 📝 Internship Management
+## Company Verification
 
-The system supports internship states including:
+New companies enter the system with a verification status of:
 
 ```text
-Draft
-   ↓
-Pending Approval
-   ↓
-Approved
-   ↓
-Published
-   ↓
-Application Closed
-   ↓
-Ongoing
-   ↓
-Completed
+Pending
 ```
 
----
+The Placement Cell can then review the company and change its status to:
 
-## 🔔 Notification System
+```text
+Pending → Approved
+```
 
-Notifications are generated for important system activities such as:
+or:
 
-- Application updates
-- Interview scheduling
-- Student selection
-- Document updates
-- Task assignments
-- Internship updates
-- Reports
-- System activities
+```text
+Pending → Rejected
+```
 
-Users can view their notifications and mark individual or all notifications as read.
+This prevents unverified companies from freely participating in the internship workflow.
 
 ---
 
-## 📈 Monitoring & Reports
+## Eligibility Checking
 
-The system provides dashboards and statistics for monitoring:
+Before applying, student information can be evaluated against internship eligibility requirements.
 
-- Students
-- Companies
-- Internships
-- Applications
-- Selected students
-- Tasks
-- Weekly reports
-- Documents
-- Internship progress
-- Evaluations
-- Notifications
+Eligibility can consider information such as:
 
-The Placement Cell can use these features to monitor internship activities across the system.
+* Department/branch
+* Academic year
+* CGPA
+* Backlogs
+* Required skills
+
+This helps prevent invalid applications and provides students with eligibility information before applying.
 
 ---
 
-## 🛡️ Security
+## Task & Progress Management
 
-The application includes:
+After selection, companies can assign tasks to students.
 
-- Password hashing
-- JWT authentication
-- Protected API routes
-- Role-based authorization
-- Environment variables for sensitive credentials
-- Server-side validation
-- Restricted access based on user roles
+Students can:
 
-> **Important:** Never commit `.env` files, MongoDB credentials, JWT secrets, or other sensitive information to GitHub.
+* View assigned tasks
+* Track task status
+* Record internship activities
+* Submit weekly reports
+
+Companies and the Placement Cell can use this information to monitor internship progress.
 
 ---
 
-## ☁️ Deployment
+## Notification System
+
+The application provides notifications for important activities such as:
+
+* New internship applications
+* Application status changes
+* Interview scheduling
+* Student selection
+* Task assignment
+* Weekly reports
+* Document-related updates
+* Internship-related activities
+* System events
+
+Users can view notifications and mark them as read.
+
+---
+
+## Audit Logging
+
+Important system operations can be recorded through audit logs.
+
+This provides better traceability for administrative and internship-management activities.
+
+---
+
+## Security
+
+The project includes several security practices:
+
+* Password hashing using bcrypt
+* JWT authentication
+* Protected backend routes
+* Role-based authorization
+* Server-side validation
+* Environment-based configuration
+* Restricted administrative functionality
+* User-specific resource access
+
+> **Security Notice:** Never commit `.env` files, MongoDB credentials, JWT secrets, user documents, passwords, or other sensitive information to the repository.
+
+---
+
+## Deployment Architecture
 
 The project can be deployed using:
 
 ```text
-Frontend  → Vercel
-Backend   → Render
-Database  → MongoDB Atlas
+              Users
+                │
+                ▼
+       ┌─────────────────┐
+       │     Vercel      │
+       │  React Frontend │
+       └────────┬────────┘
+                │
+                │ HTTPS
+                ▼
+       ┌─────────────────┐
+       │     Render      │
+       │ Express Backend │
+       └────────┬────────┘
+                │
+                ▼
+       ┌─────────────────┐
+       │  MongoDB Atlas  │
+       │    Database     │
+       └─────────────────┘
 ```
 
-For production use, uploaded documents and resumes should be stored using persistent cloud storage rather than temporary server storage.
+For production use, persistent cloud storage should be considered for resumes and other uploaded documents rather than relying on temporary server storage.
 
 ---
 
-## 🎯 Project Objective
+## Future Enhancements
 
-The main objective of the Student Internship Tracking System is to provide a centralized platform for managing the complete internship process while improving communication and coordination between:
+Potential improvements include:
 
-**Students ↔ Companies ↔ Placement Cell**
-
-The system reduces manual tracking and provides better visibility into internship applications, selections, tasks, progress, reports, documents, and evaluations.
-
----
-
-## 🔮 Future Enhancements
-
-Possible future improvements include:
-
-- Email notifications
-- Cloud-based document storage
-- Advanced analytics and charts
-- Automated internship recommendations
-- Certificate generation
-- Exportable reports
-- Interview reminders
-- Mobile-responsive enhancements
-- Production deployment and monitoring
+* Email notifications
+* Persistent cloud document storage
+* Advanced placement analytics
+* Graphical reporting dashboards
+* Internship recommendation system
+* Automated reminders
+* Certificate generation
+* Report export functionality
+* Improved search and filtering
+* Enhanced mobile responsiveness
 
 ---
 
-## 👨‍💻 Developer
+## Project Purpose
+
+This project was developed to demonstrate the implementation of a complete internship management workflow using modern full-stack web technologies.
+
+It focuses on connecting the three major participants in the internship process:
+
+```text
+Students ↔ Companies ↔ Placement Cell
+```
+
+The objective is to provide a centralized and structured system for internship discovery, approval, selection, monitoring, reporting, and evaluation.
+
+---
+
+## Developer
 
 **Vedant Patil**
-
 Computer Engineering Student
 
-GitHub: **LearnerOp02**
+GitHub: [@LearnerOp02](https://github.com/LearnerOp02)
 
 ---
 
-## 📄 License
+## Repository
 
-This project is developed for educational and academic purposes.
+**InternshipTracker**
 
-Copyright © 2026 Vedant Patil. All rights reserved.
+https://github.com/LearnerOp02/InternshipTracker
+
+---
+
+## Copyright
+
+Copyright © 2026 Vedant Patil.
+
+This project and its original source code are provided for educational and academic purposes. Third-party libraries, frameworks, and dependencies remain subject to their respective licenses.
